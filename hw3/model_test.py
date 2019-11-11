@@ -28,10 +28,11 @@ def load_data(img_path, label_path):
 
     return train_set, valid_set
 
-def load_testdata(img_path, label_path):
+def load_testdata(img_path):
     train_image = sorted(glob.glob(os.path.join(img_path, '*.jpg')))
-    train_label = pd.read_csv(label_path)
-    train_label = train_label.iloc[:,1].values.tolist()
+    #train_label = pd.read_csv(label_path)
+    #train_label = train_label.iloc[:,1].values.tolist()
+    train_label = [i for i in range(len(train_image))]#
 
     train_data = list(zip(train_image, train_label))
 
@@ -41,7 +42,7 @@ def model_predict(model, data_dir):
     use_gpu = torch.cuda.is_available()
     if use_gpu:
         model.cuda()
-    test_set = load_testdata(data_dir, 'train.csv') # train.csv is useless here XD
+    test_set = load_testdata(data_dir)
     transform = transforms.Compose([transforms.ToTensor()])
     test_dataset = hw3_dataset(test_set,transform)
     test_loader = DataLoader(test_dataset,batch_size=128, shuffle=False)
@@ -137,14 +138,17 @@ def main():
     model1 = Resnet34()
     model1.load_state_dict(torch.load('20191106_res34_model_57.pth'))
     pred1 = model_predict(model1, sys.argv[1])
+    print("Loaded model 1")
 
     model2 = WideResnet50_2()
     model2.load_state_dict(torch.load('20191105_wideres50_model_146.pth'))
     pred2 = model_predict(model2, sys.argv[1])
+    print("Loaded model 2")
 
     model3 = Resnet50()
     model3.load_state_dict(torch.load('20191106_res50_model_112.pth'))
     pred3 = model_predict(model3, sys.argv[1])
+    print("Loaded model 3")
 
     pred = voting(pred1, pred2, pred3)
     save_pred(pred, sys.argv[2])
