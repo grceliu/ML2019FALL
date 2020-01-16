@@ -15,16 +15,16 @@ pip install -r requirements.txt
 
 ### Usage
 
-Please first download the datasets using Kaggle's API:
+First, please download the datasets through Kaggle's API:
 
 ```
-Give the example
+Give the example (to be completed)
 ```
 
 Then, open the .ipynb file to run the code and see the results.
 
 ```
-until finished
+until finished (to be completed)
 ```
 
 ## Authors
@@ -32,6 +32,9 @@ until finished
 * **劉傳筠** - b04303006
 * **周侑萱** - b05303009
 * **黃禹翔** - b05702095
+
+## Best Score
+* Public Score: 0.547
 
 ## Models
 
