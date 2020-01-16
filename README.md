@@ -1,11 +1,9 @@
-# ML 2019 FALL Final Project
-# 2019 Data Science Ball 
+# ML 2019 FALL Final Project - 2019 Data Science Ball 
 
 Please refer to the 2019 Data Science Bowl [website](https://www.kaggle.com/c/data-science-bowl-2019) for more details.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
@@ -15,31 +13,19 @@ Please install all the required packages using the code below:
 pip install -r requirements.txt
 ```
 
-### Executing
+### Usage
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+Please first download the datasets using Kaggle's API:
 
 ```
 Give the example
 ```
 
-And repeat
+Then, open the .ipynb file to run the code and see the results.
 
 ```
 until finished
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
 
 ## Authors
 
