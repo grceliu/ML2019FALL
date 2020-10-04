@@ -21,4 +21,4 @@ Tools:  AutoEncoder (PyTorch), PCA & tSNE (scikit-learn)
 ### HW5 - Malicious Tweet Detection  
 
 Description: Identify the tweets that includes malicious contents. [(more)](https://reurl.cc/Q3RAko)  
-Tools: BoW, Word2Vec, GRU and Bi-GRU (PyTorch)
+Tools: BoW, Word2Vec, GRU and Bi-GRU (Keras)
