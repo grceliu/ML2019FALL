@@ -37,26 +37,6 @@ def load_testdata(img_path, label_path):
 
     return train_data
 
-def model_predict(model, data_dir):
-    use_gpu = torch.cuda.is_available()
-    if use_gpu:
-        model.cuda()
-    test_set = load_testdata(data_dir, 'train.csv') # train.csv is useless here XD
-    transform = transforms.Compose([transforms.ToTensor()])
-    test_dataset = hw3_dataset(test_set,transform)
-    test_loader = DataLoader(test_dataset,batch_size=128, shuffle=False)
-
-    pred = np.array([])
-    with torch.no_grad():
-        for data in test_loader:
-            images, labels = data
-            images = images.cuda()
-            outputs = model(images)
-            _, predicted = torch.max(outputs.data, 1)
-            predicted = predicted.data.cpu().numpy()
-            pred = np.append(pred, predicted)
-    return pred
-
 class hw3_dataset(Dataset):
 
     def __init__(self, data, transform):
